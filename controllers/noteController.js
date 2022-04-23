@@ -77,7 +77,7 @@ async function deleteNote(req, res) {
     }
 }
 
-//seed
+//seed notes
 function seedNotes(req, res) {
     try {
         Note.deleteMany({}, (error, allNotes) => {
