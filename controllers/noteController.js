@@ -3,7 +3,7 @@
 const Note = require('../models/note')
 
 module.exports = {
-    //all the functions go here
+    index, newNote, showNote, editNote, updateNote, createNote, deleteNote
 }
 
 // INDUCES - Index, New, Delete, Update, Create, Edit, Show
@@ -21,7 +21,7 @@ async function index(req, res) {
 }
 
 //displays to add a new note
-function newNotePage(req, res) {
+function newNote(req, res) {
     res.render('new.ejs') //this should be the code for the overlay
 }
 
@@ -46,7 +46,7 @@ async function editNote(req, res) {
 }
 
 //commit note edit
-async function update(req, res) {
+async function updateNote(req, res) {
     try {
         await Note.findByIdAndUpdate(req.params.id, req.body)
         res.redirect(`/notes`)
@@ -56,7 +56,7 @@ async function update(req, res) {
 }
 
 //create note
-async function create(req, res) {
+async function createNote(req, res) {
     try {
         let newNote = await Note.create(req.body)
         res.redirect(`/notes/`)
