@@ -4,6 +4,10 @@ const methodOverride = require('method-override')
 require('dotenv').config()
 const mongoose = require('mongoose')
 const database = mongoose.connection
+const PORT = process.env.PORT || 9001
+app.listen(PORT, () => {
+    console.log(`Port: ${PORT}`);
+  });
 
 //connects mongoose to database
 mongoose.connect(process.env.DATABASE_URL, {
