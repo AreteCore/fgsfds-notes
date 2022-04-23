@@ -1,9 +1,11 @@
 
 //schema
 const Note = require('../models/note')
+//seed data
+const seed = require("../models/productseed")
 
 module.exports = {
-    index, newNote, showNote, editNote, updateNote, createNote, deleteNote
+    index, newNote, showNote, editNote, updateNote, createNote, deleteNote, seedNotes
 }
 
 // INDUCES - Index, New, Delete, Update, Create, Edit, Show
@@ -70,6 +72,17 @@ async function deleteNote(req, res) {
     try {
         await Note.findByIdAndDelete(req.params.id)
         res.redirect('/notes')
+    } catch (err) {
+        res.send(err)
+    }
+}
+
+//seed
+function seedNotes(req, res) {
+    try {
+        Note.deleteMany({}, (error, allNotes) => {
+            Note.create(seed) //can i take this out of here? move it down
+        })
     } catch (err) {
         res.send(err)
     }
