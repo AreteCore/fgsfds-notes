@@ -25,7 +25,7 @@
             </div>
             <div class="notes" id="notes">
                 <% for (note of notes) { %>
-                    <div class="note" hx-get="<%= note._id %>/edit" hx-trigger="click" hx-target="#dynamic-note"
+                    <div class="note" hx-get="/notes/<%= note._id %>/edit" hx-trigger="click" hx-target="#dynamic-note"
                         hx-swap="innerHTML">
                         <div class="noteheader">
                             <div class="notetitle" >
@@ -36,7 +36,7 @@
                             </div> -->
                         </div>
                         <div class="notebody">
-                            <%= note.body %>
+                            <%- md.render(note.body);%>
                         </div>
                     </div>
                     <% } %>

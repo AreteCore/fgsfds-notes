@@ -72,7 +72,7 @@ button {
 
 .notes > div {  
     width:100%;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 .note {
@@ -84,6 +84,7 @@ button {
     opacity: 90%;
     border-radius: .5em;
     cursor: pointer;
+    height:auto;
 
 }
 
@@ -108,10 +109,11 @@ button {
 }
 
 .notebody {
-    font-size: 10px;
+    font-size: 11.5px;
     color: white;
-    max-height: 6.6em;
-    overflow: auto;
+    /* max-height: 6.6em; */
+    /* overflow: auto; */
+    height:auto;
 }
 
 .notefoot {

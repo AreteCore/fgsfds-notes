@@ -3,6 +3,8 @@ const router = express.Router();
 const noteController = require('../controllers/noteController');
 
 router.get('/', noteController.index);
+router.get('/nothing', noteController.nothing)
+
 router.get('/new', noteController.newNote);
 router.get('/seed', noteController.seedNotes)
 router.post('/search', noteController.search)

@@ -3,9 +3,9 @@
 const Note = require('../models/Note')
 //seed data
 const seed = require("../models/noteseed")
-
+var md = require('markdown-it')();
 module.exports = {
-    index, newNote, showNote, editNote, updateNote, createNote, deleteNote, seedNotes, search
+    index, newNote, showNote, editNote, updateNote, createNote, deleteNote, seedNotes, search, nothing
 }
 
 // INDUCES - Index, New, Delete, Update, Create, Edit, Show
@@ -16,7 +16,8 @@ async function index(req, res) {
         let noteDatabaseContents = await Note.find({}).sort({"updatedAt": -1}) //pulls all, maybe try to organize by updated?
         console.log(noteDatabaseContents)
         res.render('index.ejs', {
-            notes: noteDatabaseContents
+            notes: noteDatabaseContents,
+            md : md
         })
         // res.send("bang")
     } catch (err) {
@@ -30,7 +31,7 @@ async function search(req, res) {
     try {
         // Customer.find({ email: /foo\.bar/ }).find({ age: { $gte: 30 } });
         let mySearch = req.body.search
-        let noteSearchResults = await Note.find({body: (/,mySearch,/)}).sort({"updatedAt": -1}) 
+        let noteSearchResults = await Note.find({body: (mySearch)}).sort({"updatedAt": -1}) 
         console.log(noteSearchResults)
         res.render('results.ejs', {
             notes: noteSearchResults
@@ -79,17 +80,6 @@ async function updateNote(req, res) {
     }
 }
 
-//try this
-// app.put("/todo/:id", async (req,res) => {
-//     //get id
-//     let id = req.params.id
-//     //get todos
-//     const todo = await Todo.findById(id)
-//     //complete todo
-//     todo.completed = true
-//     todo.save() //saves changes
-// })
-
 //create note
 async function createNote(req, res) {
     try {
@@ -117,10 +107,14 @@ async function deleteNote(req, res) {
 function seedNotes(req, res) {
     try {
         Note.deleteMany({}, (error, allNotes) => {
-            Note.create(seed) //can i take this out of here? move it down
         })
+        Note.create(seed)
     } catch (err) {
         res.send(err)
     }
 }
 
+//nothing?
+function nothing(req,res) {
+    res.send()
+}
