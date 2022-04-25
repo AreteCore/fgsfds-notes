@@ -1,0 +1,235 @@
+/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"; */
+
+:root {
+    --lapis-lazuli: #055f96;
+    --black-coral: #455b69;
+    --laurel-green: #bacc9d;
+    --cadet-blue-crayola: #a5b8c4;
+    --avocado: #548507;
+    --main-bg-color: var(--cadet-blue-crayola);
+    --note-color: var(--laurel-green);
+    --search-bar: var(--black-coral);
+}
+
+body {
+    background-color: var(--main-bg-color);
+    padding: 1em;
+}
+
+button {
+    background-color: var(--avocado);
+    border: none;
+    border-radius: .4em
+}
+
+.main {
+    border: 1px solid rgb(255, 255, 255);
+    margin: auto;
+    width: 820px;
+    padding: 1em;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+}
+
+.top {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add {
+    width: 2em;
+    height: 2em;
+    background-color: var(--black-coral);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: white;
+    font-size: 1.5em;
+    border-radius: .1em;
+}
+.hidden {
+    display: none;
+}
+.searchbar input{
+    height: 3em;
+    background-color: var(--black-coral);
+    min-width: 200px;
+}
+
+.invisible { width: 2em;
+    height: 2em;}
+
+.notes {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.notes > div {  
+    width:100%;
+    flex-grow: 1;
+}
+
+.note {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: var(--black-coral);
+    opacity: 90%;
+    border-radius: .5em;
+    cursor: pointer;
+
+}
+
+.noteheader {
+    display: flex;
+    justify-content: space-between;
+}
+.notetitle {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.delete {
+    color:white;
+    font-size: 2.2em;
+    width: .8em;
+    height: .8em;
+    background-color: maroon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notebody {
+    font-size: 10px;
+    color: white;
+    max-height: 6.6em;
+    overflow: auto;
+}
+
+.notefoot {
+    display:flex;
+    justify-content: right;
+}
+
+.overlay-grey {
+        opacity:    0.5; 
+        background: #000; 
+        width:      100vw;
+        height:     100vh; 
+        z-index:    1;
+        top:        0; 
+        left:       0; 
+        position:   fixed; 
+}
+
+.dynamic-note {
+    width: 500px;
+    height: 250px;
+    z-index: 2;
+    background-color: var(--lapis-lazuli);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+.dynamic-note .notetitle {
+    color:white;
+}
+.dynamic-note .noteheader input[type=text]{
+   height: 20px;
+   /* border: .2px lightgrey solid; */
+   padding-left: .5em;
+   margin: 0;
+   background-color: var(--black-coral);
+   border: none;
+}
+
+.dynamic-note .deletecontrol {
+    display:flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    cursor: pointer;
+}
+.dynamic-note .noteheader .delete {
+    margin: .05em;
+}
+.dynamic-note .noteheader .deletetext{
+    margin-top: .1em;
+    font-size: 10px;
+    font-weight:bold;
+    margin-right: 4px;
+}
+.dynamic-note .noteheader .delete i {
+    /* color: black; */
+}
+
+.dynamic-note .notebody textarea{
+    /* height: 20px;
+    border: .2px lightgrey solid; */
+    padding: .5em;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-coral);
+ }
+.dynamic-note .notebody {
+    min-height: 72%;
+    /* width: 80px; */
+    /* overflow-y: auto;  */
+}    
+.dynamic-note .notefoot {
+  
+}
+.dynamic-note * {
+  color: white;
+  border: none;s
+}
+
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }  
+
+
+
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    /* body {
+        background-color: lightblue;
+      } */
+      .main {
+          max-width: 820px;
+      }
+
+
+@media only screen and (max-width: 840px){
+    .main {
+        max-width: 600px;
+    }
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .main {
+        max-width: 400px;
+    }
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    .main {
+        max-width: 300px;
+    }
+}

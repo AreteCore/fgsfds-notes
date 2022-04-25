@@ -1,9 +1,12 @@
+require('dotenv').config() //good idea to have this first
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
-require('dotenv').config()
+const morgan = require('morgan')
 const mongoose = require('mongoose')
 const database = mongoose.connection
+//all the routes
+const notesRouter = require("./routes/notesRoutes")
 
 //listener
 const PORT = process.env.PORT || 9001
@@ -21,7 +24,7 @@ mongoose.connect(process.env.DATABASE_URL, {
 
 //mongoose connection status
 database.on("error", (err) => console.log(`mongo error! ${err.message}`))
-database.on("connected", () => console.log(`mongo connected: ${db.host}:${db.port}`))
+database.on("connected", () => console.log(`mongo connected: ${database.host}:${database.port}`))
 database.on("disconnected", () => console.log("mongo disconnected"))
 
 //middleware
@@ -31,11 +34,8 @@ app.use(express.urlencoded({extended:true}))
 //methodoverride, enables update and edit routes
 app.use(methodOverride("_method"))
 //enables use of static folder for app.js and style.css
-app.use("/static", express.static("public"));
+app.use("/public", express.static("static")); //public is url, static is local folder
 
-
-//all the routes
-const notesRouter = require("./routes/notesRoutes")
 
 // handle the traffic
 app.use("/notes", notesRouter)
@@ -43,7 +43,7 @@ app.use("/notes", notesRouter)
 //handle root requests
 app.get("/", (req,res) => {
     res.redirect("/notes")
-}
+})
 
 //MUST COME LAST AFTER OTHER MIDDLEWARE
-app.use('/notes', notesController)
+// app.use('/notes', noteController)

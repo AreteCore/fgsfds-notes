@@ -1,0 +1,27 @@
+<div class="overlay-grey" hx-get="" hx-trigger="click" hx-target="#dynamic-note"
+hx-swap="outerHTML">
+</div>
+<div class="dynamic-note centered" >
+    <div class="noteheader">
+        <div class="notetitle">
+            <input type="text" name="title" id="" value="<%= note.title %>" size="62" maxlength="62">
+        </div>
+        <div class="deletecontrol" 
+            hx-delete="/notes/<%= note._id %>" 
+            hx-confirm="Are you sure you want to delete?">
+            <div class="deletetext">Delete</div>
+            <div class="delete">
+                <i class="fa-solid fa-square-xmark"></i>
+            </div>
+        </div>
+    </div>
+    <div class="notebody">
+        <textarea id="txtid" name="body" rows="10" cols="10" maxlength="10000"><%= note.body %></textarea>
+    </div>
+    <div class="notefoot">
+
+        <a href="#">
+            <button hx-put="/notes/<%= note.id %>" ht-trigger="click" hx-include="[name='title'], [name='body']">Save</button>
+        </a>
+    </div>
+</div>

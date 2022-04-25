@@ -1,0 +1,14 @@
+<% for (note of notes) { %>
+    <div class="note" hx-get="<%= note._id %>/edit" hx-trigger="click" hx-target="#dynamic-note"
+        hx-swap="innerHTML">
+        <div class="noteheader">
+            <div class="notetitle" >
+                <%= note.title %>
+            </div>
+        </div>
+        <div class="notebody">
+            <%= note.body %>
+        </div>
+    </div>
+    <% } %>
+</div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+    <body>
+        <div id="dynamic-note">
+            <!-- <div class="overlay-grey hidden"></div> -->
+        </div>
+        </div>
+        <div class="main">
+            <div class="top">
+                    <div class="add"><i class="fa-solid fa-plus"
+                        hx-get="/notes/new" hx-trigger="click" hx-target="#dynamic-note"
+                                hx-swap="innerHTML"
+                        ></i></div>
+                <div class="searchbar">
+                    <input name="search" type="text"
+                    hx-trigger="keypress[keyCode===13]"
+                    hx-target="#notes"
+                    hx-swap="innerHTML"
+                    hx-post="/notes/search"
+                    >
+                </div>
+                <div class="invisible"></div>
+            </div>
+            <div class="notes" id="notes">
+                <% for (note of notes) { %>
+                    <div class="note" hx-get="<%= note._id %>/edit" hx-trigger="click" hx-target="#dynamic-note"
+                        hx-swap="innerHTML">
+                        <div class="noteheader">
+                            <div class="notetitle" >
+                                <%= note.title %>
+                            </div>
+                            <!-- <div class="delete">
+                                <i class="fa-solid fa-square-xmark"></i>
+                            </div> -->
+                        </div>
+                        <div class="notebody">
+                            <%= note.body %>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </body>
+
+</html>
