@@ -20,7 +20,7 @@ It is a fullstack CRUD app that connects to MongoDB.
     - HTMX
     - nodemon (dev)
 
-~~All~~ *Most* of the basic functionality of the app is here. It also has some fancy stuff in the form of **HTMX** and **markdown-it**.
+The basic functionality of the app is all here. It also has some fancy stuff in the form of **HTMX** and **markdown-it**.
 
 I didn't have to utilize all of the "traditional" routes simply because the functionality that I wanted does not require them. I shall explain below:
 
@@ -37,11 +37,9 @@ You can click on a note to **edit**. At the top, there is a **delete** button. I
 ### 4. Stuff that didn't work/stuff I didn't like
 The biggest thing that didn't work is the masonry layout I originally wanted as drawn in Wireframe #2. It's really hard to do it and the new standard is really only supported in Firefox right now. Google Keep *does* accomplish the masonry layout in multiple browsers but I haven't the slightest idea how. I think it's probably easier in React or something but we aren't there yet.
 
-The second thing that was hard is the search function. It seems to be really difficult to parse user queries out of a search bar and into mongoose in any meaningful way without a lot of tinkering and effort. The search only works right now if the user searches for the *entire* body string in full. Which is great if you have a note that says just *asdf* but not so good if you wanna search for anything more complex than that.
+The second thing is the way that clicking the greyed out area clears the notes. It's still querying the server and receiving a res.send() with nothing in it so HTMX can use it's swap function, but it was the only way I could run the innerHTML that would work and just clear out the div. I tried using a click listener and it wouldn't work.
 
-The third thing is the way that clicking the greyed out area clears the notes. It's still querying the server and receiving a res.send() with nothing in it, but it was the only way I could run the innerHTML that would work and just clear out the div. I tried using a click listener and it wouldn't work
-
-Another thing, I left routes that are unused in the controller/routes files because why not? There is also a new view called **results** that displays search results. More HTMX.
+Another thing, I left the unused show route in the controller/routes files because why not? There is also a new view called **results** that displays search results. More HTMX.
   
 ---
 ## Wireframe 1  

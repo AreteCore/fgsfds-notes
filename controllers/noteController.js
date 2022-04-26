@@ -5,7 +5,16 @@ const Note = require('../models/Note')
 const seed = require("../models/noteseed")
 var md = require('markdown-it')();
 module.exports = {
-    index, newNote, showNote, editNote, updateNote, createNote, deleteNote, seedNotes, search, nothing
+    index, 
+    newNote, 
+    // showNote, UNUSED ROUTE, show.ejs is not needed
+    editNote, 
+    updateNote, 
+    createNote, 
+    deleteNote, 
+    seedNotes, 
+    search, 
+    nothing
 }
 
 // INDUCES - Index, New, Delete, Update, Create, Edit, Show
@@ -28,15 +37,14 @@ async function index(req, res) {
 async function search(req, res) {
     // console.log("req.body",req.body)
     // { search: 'asdfdsf' }
+    let regex = new RegExp(`${req.body.search}`, 'i')
+    console.log(regex)
     try {
-        // Customer.find({ email: /foo\.bar/ }).find({ age: { $gte: 30 } });
-        let mySearch = req.body.search
-        let noteSearchResults = await Note.find({body: (mySearch)}).sort({"updatedAt": -1}) 
-        console.log(noteSearchResults)
+        let noteSearchResults = await Note.find({body: regex}).sort({"updatedAt": -1}) 
+        // console.log(noteSearchResults)
         res.render('results.ejs', {
             notes: noteSearchResults
         })
-        // res.send("bang")
     } catch (err) {
         res.send(err)
     }
@@ -47,15 +55,17 @@ function newNote(req, res) {
     res.render('new.ejs') //this should be the code for the overlay
 }
 
-//displays to show an individual note
-async function showNote(req, res) {
-    try {
-        let foundNote = await Note.findById(req.params.id)
-        res.render('show.ejs', { note: foundNote })
-    } catch (err) {
-        res.send(err)
-    }
-}
+//displays to show an individual note 
+//this is unused
+//if there was a separate show.ejs page, this would be used
+// async function showNote(req, res) {
+//     try {
+//         let foundNote = await Note.findById(req.params.id)
+//         res.render('show.ejs', { note: foundNote })
+//     } catch (err) {
+//         res.send(err)
+//     }
+// }
 
 //displays edit note
 async function editNote(req, res) {

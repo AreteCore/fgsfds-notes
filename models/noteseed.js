@@ -23,7 +23,7 @@ module.exports = [
           '    - HTMX\n' +
           '    - nodemon (dev)\n' +
           '\n' +
-          '~~All~~ *Most* of the basic functionality of the app is here. It also has some fancy stuff in the form of **HTMX** and **markdown-it**.\n' +
+          'The basic functionality of the app is all here. It also has some fancy stuff in the form of **HTMX** and **markdown-it**.\n' +
           '\n' +
           `I didn't have to utilize all of the "traditional" routes simply because the functionality that I wanted does not require them. I shall explain below:\n` +
           '\n' +
@@ -40,39 +40,33 @@ module.exports = [
           "### 4. Stuff that didn't work/stuff I didn't like\n" +
           "The biggest thing that didn't work is the masonry layout I originally wanted as drawn in Wireframe #2. It's really hard to do it and the new standard is really only supported in Firefox right now. Google Keep *does* accomplish the masonry layout in multiple browsers but I haven't the slightest idea how. I think it's probably easier in React or something but we aren't there yet.\n" +
           '\n' +
-          'The second thing that was hard is the search function. It seems to be really difficult to parse user queries out of a search bar and into mongoose in any meaningful way without a lot of tinkering and effort. The search only works right now if the user searches for the *entire* body string in full. Which is great if you have a note that says just *asdf* but not so good if you wanna search for anything more complex than that.\n' +
+          `The second thing is the way that clicking the greyed out area clears the notes. It's still querying the server and receiving a res.send() with nothing in it so HTMX can use it's swap function, but it was the only way I could run the innerHTML that would work and just clear out the div. I tried using a click listener and it wouldn't work."\n` +
           '\n' +
-          "The third thing is the way that clicking the greyed out area clears the notes. It's still querying the server and receiving a res.send() with nothing in it, but it was the only way I could run the innerHTML that would work and just clear out the div. I tried using a click listener and it wouldn't work\n" +
-          '\n' +
-          'Another thing, I left routes that are unused in the controller/routes files because why not? There is also a new view called **results** that displays search results. More HTMX.',
+          'Another thing, I left the unused show route in the controller/routes files because why not? There is also a new view called **results** that displays search results. More HTMX.',
+      },
+      {
+        "title": "Skyline to the Sea",
+        "body": "### I really want to do the Skyline to the Sea hike in Santa Cruz, CA\n\n" +
+        "![Skyline to the Sea Photo](https://cdn2.apstatic.com/photos/hike/7060349_medium_1562708063.jpg)"
       },
     {
-        "title": "As the prophecy foretold",
-        "body": "Dreamcatcher yuccie pickled humblebrag hexagon tote bag pok pok pabst keytar portland godard enamel pin. Fanny pack wayfarers pork belly, affogato typewriter PBR&B health goth single-origin coffee brunch gastropub. Venmo +1 godard hashtag asymmetrical hell of coloring book activated charcoal quinoa pok pok photo booth vape. Cliche tbh cardigan fashion axe, iPhone twee gochujang selfies four dollar toast +1 pork belly yr etsy helvetica."
+        "title": "Muenster, by far",
+        "body": "Cheese on toast airedale the big cheese. Danish fontina cheesy grin airedale danish fontina taleggio the big cheese macaroni cheese port-salut. Edam fromage lancashire feta caerphilly everyone loves chalk and cheese brie. Red leicester parmesan cheese and biscuits cheesy feet blue castello cheesecake fromage frais smelly cheese."
     },
-    {
-        "title": "Three raccons in a trenchcoat",
-        "body": "Kale chips lo-fi live-edge edison bulb whatever adaptogen single-origin coffee snackwave meh seitan organic chicharrones 8-bit cardigan. Marfa sriracha lo-fi shoreditch, bitters keffiyeh tattooed intelligentsia typewriter four dollar toast seitan meggings. Paleo distillery cliche tilde, viral salvia tote bag vegan jianbing meditation. Chillwave ugh cold-pressed quinoa."
-    },
-    {
-        "title": "Strange hill to die on",
-        "body": "Franzen echo park next level vice, enamel pin keffiyeh heirloom chartreuse raw denim. Viral hella man braid skateboard, bespoke prism before they sold out. Ennui prism woke, chartreuse cronut pork belly cred hell of. Austin XOXO lumbersexual shaman raw denim, chillwave cliche hella shabby chic thundercats."
-    },
-
     {
         "title": "Elongated Muskrat",
-        "body": "Cliche irony activated charcoal subway tile kitsch etsy. Direct trade vaporware blog, you probably haven't heard of them XOXO health goth polaroid wayfarers. Adaptogen asymmetrical photo booth neutra meggings kinfolk before they sold out edison bulb salvia disrupt. Blog photo booth helvetica, godard fingerstache pug af gentrify tilde typewriter fixie chillwave normcore twee polaroid. Copper mug yr VHS hexagon leggings subway tile. Authentic pabst art party, slow-carb shaman vinyl post-ironic etsy artisan."
+        "body": "As the prophecy foretold, Cliche irony activated charcoal subway tile kitsch etsy. Direct trade vaporware blog, you probably haven't heard of them XOXO health goth polaroid wayfarers. Adaptogen asymmetrical photo booth neutra meggings kinfolk before they sold out edison bulb salvia disrupt. Blog photo booth helvetica, godard fingerstache pug af gentrify tilde typewriter fixie chillwave normcore twee polaroid. Copper mug yr VHS hexagon leggings subway tile. Authentic pabst art party, slow-carb shaman vinyl post-ironic etsy artisan."
     },
     {
         "title": "Unfathomably Based",
-        "body": "Tbh keffiyeh bicycle rights, venmo unicorn sriracha tumeric art party synth shabby chic swag small batch normcore meggings. Echo park lumbersexual twee hell of copper mug palo santo blog. Letterpress cardigan tofu, raclette leggings organic fam +1. Trust fund photo booth asymmetrical biodiesel dreamcatcher taxidermy. Meggings normcore kogi copper mug."
+        "body": "I’m sure many of you have been hearing rumours lately — about me, about the future of this firm, and that’s what I’d like to talk to you about today. Five years ago when I started Stratton with Donnie Azoff, I knew the day would eventually come when I’d be moving on. It’s truly with a heavy heart that I tell you that day is here. Thank you for that and for your years of incredible loyalty and admiration. The point is though, that under Donnie’s leadership, along with Robbie Feinberg and Nicky Koskoff moving into key management positions, this place is gonna be better than ever! And the fact that I’m gone won’t stop me from giving Donnie advice, not that he needs any… Before I go, there’s something I want to remind you all, and that’s this – Stratton Oakmont is bigger than any one person, even me. Especially me. You guys are Stratton, each and every one of you, and that is why it’s sure to remain the best brokerage firm in the f****** world!"
     },
     {
         "title": "Lets goooooooo",
-        "body": "I'm baby blue bottle squid dreamcatcher pinterest af. Hot chicken XOXO you probably haven't heard of them tousled, subway tile lo-fi artisan tofu. Lyft tbh scenester kickstarter poutine keffiyeh banjo 3 wolf moon YOLO chillwave vegan. Copper mug gentrify selvage, jianbing iPhone art party flexitarian succulents tattooed raclette."
+        "body": "BUY CUMDOGELON COIN NAOO Although Dash serves lots of shilling, Pajeet could be lots of oracle of few raiden network, but because Bitcoin Cash expected a hot 51% attack in some token, Ravencoin stacks many efficient algorithm after many oracle! SHA 256 stacks a whitepaper, for someone counted lots of minimum gas! Digitex Futures data mining few hyperledger! Bitcoin specialises in a efficient FOMO when Mt. Gox was many algorithm in some bag. Golem thinking the soft fork of a on-ledger currency when it froze a pump and dump at many ERC721 token standard."
     },
     {
-        "title": "And here we go again",
-        "body": "Freegan offal lomo tilde cold-pressed 8-bit drinking vinegar lo-fi lumbersexual glossier banjo put a bird on it cred brooklyn. Jianbing thundercats skateboard drinking vinegar photo booth ennui franzen enamel pin williamsburg lyft. Swag vice flexitarian kitsch kogi chicharrones. Four loko PBR&B marfa enamel pin scenester offal sustainable pickled butcher mustache asymmetrical craft beer edison bulb. Typewriter mlkshk knausgaard echo park kogi sartorial taxidermy sriracha. Mumblecore jean shorts kogi fashion axe kinfolk, brooklyn flexitarian poutine williamsburg yuccie tumblr umami taxidermy direct trade."
+        "title": "HODOR",
+        "body": "Hodor. Hodor hodor, hodor. Hodor hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor. Hodor. Hodor hodor; hodor hodor - hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor hodor hodor; hodor hodor; hodor hodor hodor! Hodor hodor HODOR! Hodor hodor... Hodor hodor hodor..."
     },
 ]
