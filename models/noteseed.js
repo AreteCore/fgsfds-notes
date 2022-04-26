@@ -1,54 +1,56 @@
 module.exports = [
     {
         title: 'fgsfds',
-        body: '## WELCOME TO FGSFDS NOTES\n' +
-        `### (This is most of the [readme](https://github.com/AreteCore/fgsfds-notes/blob/main/README.md), but does not have the images)\n` +
-          `#### It's pronounced "figgis-fiddis"\n` +
-          '### Description:\n' +
-          '*fgsfds is a notetaking app similar to Google Keep in its functionality.*\n' +
-          '\n' +
-          'It is a fullstack CRUD app that connects to MongoDB.\n' +
-          '\n' +
-          '### Technologies Used:\n' +
-          '- HTML/CSS/JavaScript\n' +
-          '- MongoDB\n' +
-          '- **In Node:**\n' +
-          '    - express\n' +
-          '    - EJS\n' +
-          '    - mongoose\n' +
-          '    - dotenv\n' +
-          '    - morgan\n' +
-          '    - method-override\n' +
-          '    - markdown-it\n' +
-          '    - HTMX\n' +
-          '    - nodemon (dev)\n' +
-          '\n' +
-          'The basic functionality of the app is all here. It also has some fancy stuff in the form of **HTMX** and **markdown-it**.\n' +
-          '\n' +
-          `I didn't have to utilize all of the "traditional" routes simply because the functionality that I wanted does not require them. I shall explain below:\n` +
-          '\n' +
-          '### 1. Index + Show\n' +
-          'The **index** page is also the **show** page. Why?\n' +
-          "Because we don't need a show page when you can see the entire note right here. It's a note taking app. Simplicity is key or it will scare users away.\n" +
-          '\n' +
-          '### 2. Create note\n' +
-          "You can **create** a note by clicking the + sign at the top left of the index page. This uses HTMX to bring up a blank note where you can type most anything. It is fantastic. If you decide you don't want to create a note, you can click on the greyed out area and it will **discard** your new note.\n" +
-          '\n' +
-          '### 3. Editing notes\n' +
-          'You can click on a note to **edit**. At the top, there is a **delete** button. It will confirm with you if you click it before it deletes. This is all done with HTMX. Big ups to HTMX. If you want to cancel your edit, you can click the greyed out area on the outside of the note you are editing and it will **discard** changes.\n' +
-          '\n' +
-          "### 4. Stuff that didn't work/stuff I didn't like\n" +
-          "The biggest thing that didn't work is the masonry layout I originally wanted as drawn in Wireframe #2. It's really hard to do it and the new standard is really only supported in Firefox right now. Google Keep *does* accomplish the masonry layout in multiple browsers but I haven't the slightest idea how. I think it's probably easier in React or something but we aren't there yet.\n" +
-          '\n' +
-          `The second thing is the way that clicking the greyed out area clears the notes. It's still querying the server and receiving a res.send() with nothing in it so HTMX can use it's swap function, but it was the only way I could run the innerHTML that would work and just clear out the div. I tried using a click listener and it wouldn't work."\n` +
-          '\n' +
-          'Another thing, I left the unused show route in the controller/routes files because why not? There is also a new view called **results** that displays search results. More HTMX.',
-      },
-      {
+        body:
+            '![obama](https://github.com/AreteCore/fgsfds-notes/raw/main/img/obama.png)\n' +
+            '## WELCOME TO FGSFDS NOTES\n' +
+            `### (This is most of the [readme](https://github.com/AreteCore/fgsfds-notes/blob/main/README.md), but does not have the images)\n` +
+            `#### It's pronounced "figgis-fiddis"\n` +
+            '### Description:\n' +
+            '*fgsfds is a notetaking app similar to Google Keep in its functionality.*\n' +
+            '\n' +
+            'It is a fullstack CRUD app that connects to MongoDB.\n' +
+            '\n' +
+            '### Technologies Used:\n' +
+            '- HTML/CSS/JavaScript\n' +
+            '- MongoDB\n' +
+            '- **In Node:**\n' +
+            '    - express\n' +
+            '    - EJS\n' +
+            '    - mongoose\n' +
+            '    - dotenv\n' +
+            '    - morgan\n' +
+            '    - method-override\n' +
+            '    - markdown-it\n' +
+            '    - HTMX\n' +
+            '    - nodemon (dev)\n' +
+            '\n' +
+            'The basic functionality of the app is all here. It also has some fancy stuff in the form of **HTMX** and **markdown-it**.\n' +
+            '\n' +
+            `I didn't have to utilize all of the "traditional" routes simply because the functionality that I wanted does not require them. I shall explain below:\n` +
+            '\n' +
+            '### 1. Index + Show\n' +
+            'The **index** page is also the **show** page. Why?\n' +
+            "Because we don't need a show page when you can see the entire note right here. It's a note taking app. Simplicity is key or it will scare users away.\n" +
+            '\n' +
+            '### 2. Create note\n' +
+            "You can **create** a note by clicking the + sign at the top left of the index page. This uses HTMX to bring up a blank note where you can type most anything. It is fantastic. If you decide you don't want to create a note, you can click on the greyed out area and it will **discard** your new note.\n" +
+            '\n' +
+            '### 3. Editing notes\n' +
+            'You can click on a note to **edit**. At the top, there is a **delete** button. It will confirm with you if you click it before it deletes. This is all done with HTMX. Big ups to HTMX. If you want to cancel your edit, you can click the greyed out area on the outside of the note you are editing and it will **discard** changes.\n' +
+            '\n' +
+            "### 4. Stuff that didn't work/stuff I didn't like\n" +
+            "The biggest thing that didn't work is the masonry layout I originally wanted as drawn in Wireframe #2. It's really hard to do it and the new standard is really only supported in Firefox right now. Google Keep *does* accomplish the masonry layout in multiple browsers but I haven't the slightest idea how. I think it's probably easier in React or something but we aren't there yet.\n" +
+            '\n' +
+            `The second thing is the way that clicking the greyed out area clears the notes. It's still querying the server and receiving a res.send() with nothing in it so HTMX can use it's swap function, but it was the only way I could run the innerHTML that would work and just clear out the div. I tried using a click listener and it wouldn't work."\n` +
+            '\n' +
+            'Another thing, I left the unused show route in the controller/routes files because why not? There is also a new view called **results** that displays search results. More HTMX.',
+    },
+    {
         "title": "Skyline to the Sea",
         "body": "### I really want to do the Skyline to the Sea hike in Santa Cruz, CA\n\n" +
-        "![Skyline to the Sea Photo](https://cdn2.apstatic.com/photos/hike/7060349_medium_1562708063.jpg)"
-      },
+            "![Skyline to the Sea Photo](https://cdn2.apstatic.com/photos/hike/7060349_medium_1562708063.jpg)"
+    },
     {
         "title": "Muenster, by far",
         "body": "Cheese on toast airedale the big cheese. Danish fontina cheesy grin airedale danish fontina taleggio the big cheese macaroni cheese port-salut. Edam fromage lancashire feta caerphilly everyone loves chalk and cheese brie. Red leicester parmesan cheese and biscuits cheesy feet blue castello cheesecake fromage frais smelly cheese."
