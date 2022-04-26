@@ -45,5 +45,3 @@ app.get("/", (req,res) => {
     res.redirect("/notes")
 })
 
-//MUST COME LAST AFTER OTHER MIDDLEWARE
-// app.use('/notes', noteController)

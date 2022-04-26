@@ -2,7 +2,7 @@ module.exports = [
     {
         title: 'fgsfds',
         body: '## WELCOME TO FGSFDS NOTES\n' +
-        `### (This is most of the readme, but does not have the images)\n` +
+        `### (This is most of the [readme](https://github.com/AreteCore/fgsfds-notes/blob/main/README.md), but does not have the images)\n` +
           `#### It's pronounced "figgis-fiddis"\n` +
           '### Description:\n' +
           '*fgsfds is a notetaking app similar to Google Keep in its functionality.*\n' +

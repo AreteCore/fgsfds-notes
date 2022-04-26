@@ -52,6 +52,11 @@ button {
     border-radius: .1em;
     cursor: pointer;
 }
+
+a {
+    color: var(--cadet-blue-crayola);
+    font-style: italic;
+}
 .hidden {
     display: none;
 }
