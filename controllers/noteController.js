@@ -1,8 +1,8 @@
 
 //schema
-const Note = require('../models/Note')
+const Note = require('../models/Note.js')
 //seed data
-const seed = require("../models/noteseed")
+const seed = require("../models/noteseed.js")
 var md = require('markdown-it')();
 module.exports = {
     index, 
