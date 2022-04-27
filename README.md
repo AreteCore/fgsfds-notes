@@ -8,6 +8,8 @@ It is a fullstack CRUD app that connects to MongoDB.
 
 ### Technologies Used:
 - HTML/CSS/JavaScript
+    - [Masonry](https://masonry.desandro.com/)
+    - [imagesLoaded](https://imagesloaded.desandro.com/)
 - MongoDB
 - **In Node:**
     - express
