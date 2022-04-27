@@ -23,7 +23,7 @@ button {
 }
 
 .main {
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid var(--black-coral);
     margin: auto;
     width: 820px;
     padding: 1em;
@@ -31,6 +31,7 @@ button {
     display: flex;
     flex-flow: column nowrap;
     gap: 1em;
+    border-radius: 5px;
 }
 
 .top {
@@ -49,7 +50,7 @@ button {
     align-items:center;
     color: white;
     font-size: 1.5em;
-    border-radius: .1em;
+    border-radius: .2em;
     cursor: pointer;
 }
 
@@ -87,11 +88,19 @@ a {
     justify-content: space-between;
     padding: 1em;
     background-color: var(--black-coral);
-    opacity: 90%;
+    /* opacity: 90%; */
     border-radius: .5em;
     cursor: pointer;
     height:auto;
+    
+}
 
+.note:hover {
+    transform: scale(1.005, 1.005);
+    /* background-color: #455b69; */
+    background-color: #4e6777;
+    text-decoration: none;
+    
 }
 
 .noteheader {
