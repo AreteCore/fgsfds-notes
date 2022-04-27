@@ -16,6 +16,8 @@ module.exports = [
             '\n' +
             '### Technologies Used:\n' +
             '- HTML/CSS/JavaScript\n' +
+            '    - [Masonry](https://masonry.desandro.com/)\n' +
+            '    - [imagesLoaded](https://imagesloaded.desandro.com/)\n'+
             '- MongoDB\n' +
             '- **In Node:**\n' +
             '    - express\n' +
