@@ -1,8 +1,11 @@
 module.exports = [
     {
+        title: "Obama loves fgsfds!",
+        body: '![obama](https://github.com/AreteCore/fgsfds-notes/raw/main/img/obama.png)\n'
+    },
+    {
         title: 'fgsfds',
         body:
-            '![obama](https://github.com/AreteCore/fgsfds-notes/raw/main/img/obama.png)\n' +
             '## WELCOME TO FGSFDS NOTES\n' +
             `### (This is most of the [readme](https://github.com/AreteCore/fgsfds-notes/blob/main/README.md), but does not have the images)\n` +
             `#### It's pronounced "figgis-fiddis"\n` +
@@ -25,9 +28,11 @@ module.exports = [
             '    - HTMX\n' +
             '    - nodemon (dev)\n' +
             '\n' +
-            'The basic functionality of the app is all here. It also has some fancy stuff in the form of **HTMX** and **markdown-it**.\n' +
-            '\n' +
-            `I didn't have to utilize all of the "traditional" routes simply because the functionality that I wanted does not require them. I shall explain below:\n` +
+            'The basic functionality of the app is all here. It also has some fancy stuff in the form of **HTMX** and **markdown-it**.\n'
+    },
+    {
+        title: "Routes",
+        body: `I didn't have to utilize all of the "traditional" routes simply because the functionality that I wanted does not require them. I shall explain below:\n` +
             '\n' +
             '### 1. Index + Show\n' +
             'The **index** page is also the **show** page. Why?\n' +
@@ -40,10 +45,7 @@ module.exports = [
             'You can click on a note to **edit**. At the top, there is a **delete** button. It will confirm with you if you click it before it deletes. This is all done with HTMX. Big ups to HTMX. If you want to cancel your edit, you can click the greyed out area on the outside of the note you are editing and it will **discard** changes.\n' +
             '\n' +
             "### 4. Stuff that didn't work/stuff I didn't like\n" +
-            "The biggest thing that didn't work is the masonry layout I originally wanted as drawn in Wireframe #2. It's really hard to do it and the new standard is really only supported in Firefox right now. Google Keep *does* accomplish the masonry layout in multiple browsers but I haven't the slightest idea how. I think it's probably easier in React or something but we aren't there yet.\n" +
-            '\n' +
-            `The second thing is the way that clicking the greyed out area clears the notes. It's still querying the server and receiving a res.send() with nothing in it so HTMX can use it's swap function, but it was the only way I could run the innerHTML that would work and just clear out the div. I tried using a click listener and it wouldn't work.\n` +
-            '\n' +
+            "The only thing is the way that clicking the greyed out area clears the notes. It's still querying the server and receiving a res.send() with nothing in it so HTMX can use it's swap function, but it was the only way I could run the innerHTML that would work and just clear out the div. I tried using a click listener and it wouldn't work.\n" +
             'Another thing, I left the unused show route in the controller/routes files because why not? There is also a new view called **results** that displays search results. More HTMX.',
     },
     {

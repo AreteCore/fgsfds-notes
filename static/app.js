@@ -9,3 +9,13 @@ document.addEventListener('keydown', function (event) {
         location.reload();
     }
 });
+
+$('.notes').masonry({
+    // options...
+    itemSelector: '.note',
+    columnWidth: 400
+  });
+
+  $('.notes').imagesLoaded().progress( function() {
+    $('.notes').masonry('layout');
+  });
