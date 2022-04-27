@@ -56,8 +56,8 @@ Another thing, I left the unused show route in the controller/routes files becau
 
 ---
 ## Screenshots:
-<a href="./img/masonry1.png"><img src="./img/index.png" alt="index" width="400"></a>
-<a href="./img/masonry2.png"><img src="./img/editcreate.png" alt="editcreate" width="400"></a>
+<a href="./img/masonry1.png"><img src="./img/masonry1.png" alt="index" width="400"></a>
+<a href="./img/masonry2.png"><img src="./img/masonry2.png" alt="editcreate" width="400"></a>
 
 
 
